@@ -228,6 +228,7 @@ class MainContainer extends Component {
                       dataSource={this.props.snippetData}
                       loading={this.state.loading}
                       rowKey={(rec)=> rec.id}
+                      pagination={{defaultPageSize: 8}}
                     />
                   </Row>
                 </Card>
