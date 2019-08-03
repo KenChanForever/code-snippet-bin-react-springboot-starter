@@ -15,6 +15,7 @@
   * gulp
   * npm
   * webpack
+    * Hot module Replacement
 * Back-end
   * Java8
   * Spring Boot
@@ -55,18 +56,33 @@ spring.datasource.password=code
 
 
 ```
-# How to compile
+# How to compile and run (For normal case)
 ```$xslt
 git clone <url>;
 
 cd code-snippet-bin-react-springboot-starter;
 
-mvn spring-boot:run
+mvn spring-boot:run   # for backend server
+
+gulp watch            # for frontend script 
 ```
-# How to use
+## How to view
 ```
-# access localhost:5000 in browser
+# access http://localhost:5000 in a browser
 ```
+
+# How to build with Hot Module Replacement (For Development exclusively)
+```$xslt
+cd code-snippet-bin-react-springboot-starter;
+mvn spring-boot:run   # for backend server
+
+npm start             # for frontend script
+```
+## How to view
+```
+# access http://localhost:3000 in a browser
+```
+
 # How to dockerize
 ```$xslt
 cd code-snippet-bin-react-springboot-starter;
