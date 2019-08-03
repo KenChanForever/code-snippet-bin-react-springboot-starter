@@ -19,13 +19,15 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, './src/main/resources/static/dist'),
-    filename: '[name].js'
+    filename: 'bundle.js',
+    publicPath: 'http://localhost:3000/dist/',
+
   },
   module: {
     noParse: [/autoit.js/],
     loaders: [{
       test: /\.js$/,
-      loader: ['babel-loader'],
+      loader: ['babel'],
       query: {
         presets: ['es2015', 'stage-0', 'react']
       },
@@ -43,5 +45,19 @@ module.exports = {
     ]
   },
   plugins: getPlugins(env),
+  devServer: {
+    port: 3000,
+    proxy: {
+      '*': {
+        target: 'http://localhost:5000',
+        secure: false,
+        // node-http-proxy option - don't add /localhost:8080/ to proxied request paths
+        prependPath: false,
+        prependPath: false,
+      },
+    },
+    publicPath: 'http://localhost:3000/dist/',
+  },
+
 };
 
