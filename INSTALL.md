@@ -1,19 +1,35 @@
-## Introduction
+## Installation Guide - Experimental
 
-# code-snippet-bin-react-springboot-starter
 
-#
-# sudo apt install openjdk-8-jdk,
+### openjdk-8-jdk
+```
+sudo apt-get install openjdk-8-jdk
+```
 
-# sudo apt-get install maven
+### maven
+```
+sudo apt-get install maven
+```
 
-# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-# nvm install 6.11.1
+### nvm
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
-# git clone repo
+nvm install 6.11.1
+```
 
-#install docker
+### docker - optional
+ref: https://docs.docker.com/install/
+```
+sudo usermod -a -G docker $USER  //after installation, grant permission for user
+```
 
-#sudo usermod -a -G docker $USER
+### git repo
+```
+git clone https://github.com/KenChanForever/code-snippet-bin-react-springboot-starter.git
+```
 
-#35.221.214.28
+### postgresql - optional
+```
+// not finished
+```
