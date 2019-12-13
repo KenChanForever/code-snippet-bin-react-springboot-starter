@@ -7,13 +7,17 @@ var getPlugins = function (env) {
     'process.env': {
       NODE_ENV: JSON.stringify(env)
     }
-  }), new ExtractTextPlugin('bundle.css')];
+  }), new ExtractTextPlugin('bundle.css'),
+      new webpack.optimize.DedupePlugin(), //dedupe similar code 
+      new webpack.optimize.UglifyJsPlugin(), //minify everything
+      new webpack.optimize.AggressiveMergingPlugin() //Merge chunks 
+  ];
 
   return plugins;
 };
 
 module.exports = {
-  devtool: 'eval-source-map',
+  //devtool: 'eval-source-map',
   entry: {
     index: './src/main/webapp/js/index.js',
   },
